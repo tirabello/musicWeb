@@ -73,7 +73,8 @@
                 <button type="button" class="btn btn-primary">Filtrar</button>
             </div>
         </div>
-        <div class="row mx-auto my-2 g-3">
+
+        <div id="discos" class="row mx-auto my-2 g-3">
 
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
@@ -237,8 +238,52 @@
 
         </div> <!-- row -->
 
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Álbum</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row mt-2 g-3">
+                            <div class="col-12">
+                                <input id="titulo" type="text" class="form-control"
+                                    placeholder="Título do álbum e cantor (seguir padrão dos outros) " aria-label="Título do álbum e cantor">
+                            </div>
+                            <div class="col-12">
+                                <input id="preco" type="number" class="form-control" placeholder="Preço"
+                                    aria-label="Preço">
+                            </div>
+                            <div class="col-12">
+                                <select id="categoria" class="form-select" aria-label="Selecione o formato de venda">
+                                    <option selected>Selecione a categoria</option>
+                                    <option value="CD">CD</option>
+                                    <option value="Vinil">Vinil</option>
+                                    <option value="DVD">DVD</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="salvar" type="button" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary row mx-auto my-2 g-3" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Adicionar Álbum
+        </button>
+
     </main>
 
+    <script src="./js/crud.js"></script>
 </body>
 
 </html>
