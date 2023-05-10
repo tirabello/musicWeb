@@ -18,7 +18,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">SpotMusic Store</a>
+            <a class="navbar-brand" href="#">Spot Music Store</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -35,12 +35,13 @@
                             Loja
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Vinil</a></li>
-                            <li><a class="dropdown-item" href="#">CD</a></li>
+                            <li><a id="filtrarVinil" class="dropdown-item" href="#">Vinil</a></li>
+                            <li><a id="filtrarCD" class="dropdown-item" href="#">CD</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Cadastrar</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -57,9 +58,6 @@
             <div class="col">
                 <input type="text" class="form-control" placeholder="título" aria-label="título">
             </div>
-            <div class="col">
-                <input type="number" class="form-control" placeholder="cashback" aria-label="cashback">
-            </div>
             <div class="col-4">
                 <select class="form-select" aria-label="selecione a categoria">
                     <option selected>Selecione a categoria</option>
@@ -73,216 +71,55 @@
                 <button type="button" class="btn btn-primary">Filtrar</button>
             </div>
         </div>
-
+        
         <div id="tarefas" class="row mx-auto my-2 g-3">
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Lemonade (Beyonce)
-                </div>
-                <img src="assets/images/Lemonade.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text">CD</p>
-                    <span class="badge text-bg-warning">150R$</span>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success" title="Adicionar ao carrinho">
-                        <i class="bi bi-bag"></i>
-                    </a>
-                    <a href="#" class="btn btn-danger" title="Remover do carrinho">
-                        <i class="bi bi-trash3"></i>
-                    </a>
-                </div> <!-- card footer -->
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Iam Sasha Fierce (Beyonce)
-                </div>
-                <img src="assets/images/Iam.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text">Vinil</p>
-                    <span class="badge text-bg-warning">300R$</span>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success" title="Adicionar ao carrinho">
-                        <i class="bi bi-bag"></i>
-                    </a>
-                    <a href="#" class="btn btn-danger" title="Remover do carrinho">
-                        <i class="bi bi-trash3"></i>
-                    </a>
-                </div> <!-- card footer -->
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    4 (Beyonce)
-                </div>
-                <img src="assets/images/4.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text">CD</p>
-                    <span class="badge text-bg-warning">90R$</span>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success" title="Adicionar ao carrinho">
-                        <i class="bi bi-bag"></i>
-                    </a>
-                    <a href="#" class="btn btn-danger" title="Remover do carrinho">
-                        <i class="bi bi-trash3"></i>
-                    </a>
-                </div> <!-- card footer -->
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Be the Cowboy (Mitski)
-                </div>
-                <img src="assets/images/mitski.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text">CD</p>
-                    <span class="badge text-bg-warning">120R$</span>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success" title="Adicionar ao carrinho">
-                        <i class="bi bi-bag"></i>
-                    </a>
-                    <a href="#" class="btn btn-danger" title="Remover do carrinho">
-                        <i class="bi bi-trash3"></i>
-                    </a>
-                </div> <!-- card footer -->
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Fetch the Bolt... (Fiona Apple)
-                </div>
-                <img src="assets/images/fiona.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text">Vinil Duplo</p>
-                    <span class="badge text-bg-warning">350R$</span>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success" title="Adicionar ao carrinho">
-                        <i class="bi bi-bag"></i>
-                    </a>
-                    <a href="#" class="btn btn-danger" title="Remover do carrinho">
-                        <i class="bi bi-trash3"></i>
-                    </a>
-                </div> <!-- card footer -->
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Memórias... (Marisa Monte)
-                </div>
-                <img src="assets/images/marisa.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Memórias crônicas e declarações de amor.</p>
-                    <p class="card-text">Vinil</p>
-                    <span class="badge text-bg-warning">100R$</span>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success" title="Adicionar ao carrinho">
-                        <i class="bi bi-bag"></i>
-                    </a>
-                    <a href="#" class="btn btn-danger" title="Remover do carrinho">
-                        <i class="bi bi-trash3"></i>
-                    </a>
-                </div> <!-- card footer -->
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Churrasquinho (Menos é mais)
-                </div>
-                <img src="assets/images/churras.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Memórias crônicas e declarações de amor pros pagodeiros.</p>
-                    <p class="card-text">CD</p>
-                    <span class="badge text-bg-warning">30R$</span>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success" title="Adicionar ao carrinho">
-                        <i class="bi bi-bag"></i>
-                    </a>
-                    <a href="#" class="btn btn-danger" title="Remover do carrinho">
-                        <i class="bi bi-trash3"></i>
-                    </a>
-                </div> <!-- card footer -->
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    NFR! (Lana Del Rey)
-                </div>
-                <img src="assets/images/NFR.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Memórias crônicas e declarações de amor.</p>
-                    <p class="card-text">Vinil Duplo</p>
-                    <span class="badge text-bg-warning">400R$</span>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success" title="Adicionar ao carrinho">
-                        <i class="bi bi-bag"></i>
-                    </a>
-                    <a href="#" class="btn btn-danger" title="Remover do carrinho">
-                        <i class="bi bi-trash3"></i>
-                    </a>
-                </div> <!-- card footer -->
-            </div>
-
         </div> <!-- row -->
+        
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Adicionar Álbum
+        </button>
+    </main>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Álbum</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row mt-2 g-3">
-                            <div class="col-12">
-                                <input id="titulo" type="text" class="form-control"
-                                    placeholder="Título do álbum e cantor (seguir padrão dos outros) " aria-label="Título do álbum e cantor">
-                            </div>
-                            <div class="col-12">
-                                <input id="preco" type="number" class="form-control" placeholder="Preço" aria-label="Preço">
-                            </div>
-                            <div class="col-12">
-                                <select id="categoria" class="form-select" aria-label="Selecione o formato de venda">
-                                    <option selected>Selecione a categoria</option>
-                                    <option value="CD">CD</option>
-                                    <option value="Vinil">Vinil</option>
-                                    <option value="DVD">DVD</option>
-                                    <option value="Outro">Outro</option>
-                                </select>
-                            </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar álbum</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mt-2 g-3">
+                        <div class="col-12">
+                            <input id="titulo" type="text" class="form-control" placeholder="título"
+                                aria-label="título">
+                        </div>
+                        <div class="col-12">
+                            <input id="pontos" type="number" class="form-control" placeholder="preço"
+                                aria-label="preço">
+                        </div>
+                        <div class="col-12">
+                            <select id="categoria" class="form-select" aria-label="selecione a categoria">
+                                <option selected>Selecione a categoria</option>
+                                <option value="CD">CD</option>
+                                <option value="Vinil">Vinil</option>
+                                <option value="DVD">DVD</option>
+                                <option value="outro">Outro</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button id="salvar" type="button" class="btn btn-primary">Salvar</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button id="salvar" type="button" class="btn btn-primary">Salvar</button>
                 </div>
             </div>
         </div>
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary row mx-auto my-2 g-3" data-bs-toggle="modal"
-            data-bs-target="#exampleModal">
-            Adicionar Álbum
-        </button>
-
-    </main>
+    </div>
 
     <script src="./js/crud.js"></script>
+    <script src="./js/filtro.js"></script>
 </body>
 
 </html>
