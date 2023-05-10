@@ -1,5 +1,18 @@
 document.querySelector("#salvar").addEventListener("click", cadastrar)
 
+let tarefas = []
+
+window.addEventListener("load", () => {
+    tarefas = JSON.parse( localStorage.getItem("tarefas") ) || []
+    atualizar()
+})
+
+function atualizar(){
+    document.querySelector("#tarefas").innerHTML = ""
+    tarefas.forEach(tarefa => 
+        document.querySelector("#tarefas").innerHTML += criarCard(tarefa))
+}
+
 function cadastrar() {
     const titulo = document.querySelector("#titulo").value
     const preco = document.querySelector("#preco").value
@@ -11,8 +24,27 @@ function cadastrar() {
         categoria
     }
 
-    document.querySelector("#discos")
-        .innerHTML += criarCard(tarefa)
+    if (!isValid(tarefa.titulo, document.querySelector("#titulo"))) return
+    if (!isValid(tarefa.pontos, document.querySelector("#preco"))) return
+
+    tarefas.push(tarefa)
+    localStorage.setItem("tarefas", JSON.stringify(tarefas))
+
+    atualizar()
+    modal.hide()
+}
+
+function isValid(valor, campo){
+    if(valor.length == 0){
+        campo.classList.add("is-invalid")
+        campo.classList.remove("is-valid")
+        return false
+    }else{
+        campo.classList.add("is-valid")
+        campo.classList.remove("is-invalid")
+        return true
+    }
+
 }
 
 function apagar(botao) {
