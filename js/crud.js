@@ -12,6 +12,10 @@ function atualizar() {
     document.querySelector("#tarefas").innerHTML = ""
     tarefas.forEach(tarefa =>
         document.querySelector("#tarefas").innerHTML += criarCard(tarefa))
+
+    const total = tarefas.reduce((acc, tarefa)=> acc += Number(tarefa.pontos),0)
+    const pontosObtidos = tarefas.filter(tarefa=> tarefa.concluida).reduce((acc,tarefa) => acc+= Number(tarefa.pontos),0)
+    document.querySelector("#pontuacao").innerHTML = pontosObtidos +" R$"
 }
 function filtrar(lista){
     document.querySelector("#tarefas").innerHTML = ""
@@ -27,7 +31,7 @@ function cadastrar() {
     const tarefa = { //JSON Java Script Object Notation
         id: Date.now(),
         titulo,
-        pontos,
+        pontos : Number(pontos),
         categoria,
         concluida: false
     }

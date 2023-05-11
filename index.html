@@ -37,6 +37,8 @@
                         <ul class="dropdown-menu">
                             <li><a id="filtrarVinil" class="dropdown-item" href="#">Vinil</a></li>
                             <li><a id="filtrarCD" class="dropdown-item" href="#">CD</a></li>
+                            <li><a id="filtrarDVD" class="dropdown-item" href="#">DVD</a></li>
+                            <li><a id="filtrarOutros" class="dropdown-item" href="#">Outros</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -45,8 +47,12 @@
                         </ul>
                     </li>
                 </ul>
+                <h3>
+                    <span id="pontuacao" class="badge bg-secondary me-4 bg-warning"></span>
+                </h3>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="filtrar" aria-label="filtrar">
+                    <input id="busca" class="form-control me-2" type="search" placeholder="filtrar"
+                        aria-label="filtrar">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
             </div>
@@ -71,10 +77,9 @@
                 <button type="button" class="btn btn-primary">Filtrar</button>
             </div>
         </div>
-        
         <div id="tarefas" class="row mx-auto my-2 g-3">
         </div> <!-- row -->
-        
+
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Adicionar Álbum
@@ -100,12 +105,16 @@
                                 aria-label="preço">
                         </div>
                         <div class="col-12">
+                            <input id="images" type="text" class="form-control" placeholder="imagem de capa"
+                                aria-label="imagem de capa">
+                        </div>
+                        <div class="col-12">
                             <select id="categoria" class="form-select" aria-label="selecione a categoria">
                                 <option selected>Selecione a categoria</option>
                                 <option value="CD">CD</option>
                                 <option value="Vinil">Vinil</option>
                                 <option value="DVD">DVD</option>
-                                <option value="outro">Outro</option>
+                                <option value="Outros">Outros</option>
                             </select>
                         </div>
                     </div>
