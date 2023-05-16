@@ -13,7 +13,7 @@ function atualizar() {
     tarefas.forEach(tarefa =>
         document.querySelector("#tarefas").innerHTML += criarCard(tarefa))
 
-    const total = tarefas.reduce((acc, tarefa)=> acc += Number(tarefa.pontos),0)
+    //const total = tarefas.reduce((acc, tarefa)=> acc += Number(tarefa.pontos),0)
     const pontosObtidos = tarefas.filter(tarefa=> tarefa.concluida).reduce((acc,tarefa) => acc+= Number(tarefa.pontos),0)
     document.querySelector("#pontuacao").innerHTML = pontosObtidos +" R$"
 }
@@ -26,11 +26,13 @@ function cadastrar() {
     const titulo = document.querySelector("#titulo").value
     const pontos = document.querySelector("#pontos").value
     const categoria = document.querySelector("#categoria").value
+    const imagem = document.querySelector("#images").value
     const modal = bootstrap.Modal.getInstance(document.querySelector("#exampleModal"))
 
     const tarefa = { //JSON Java Script Object Notation
         id: Date.now(),
         titulo,
+        imagem,
         pontos : Number(pontos),
         categoria,
         concluida: false
@@ -77,7 +79,7 @@ function criarCard(tarefa) {
     <div class="card-header">
         ${tarefa.titulo}
     </div>
-    <img src="assets/images/Lemonade.jfif" class="card-img-top" alt="...">
+    <img src="${tarefa.imagem}" class="card-img-top" alt="...">
     <div class="card-body">
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         <p class="card-text">${tarefa.categoria}</p>
