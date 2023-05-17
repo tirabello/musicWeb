@@ -33,7 +33,7 @@ function cadastrar() {
         id: Date.now(),
         titulo,
         imagem,
-        pontos : Number(pontos),
+        pontos : Number( pontos),
         categoria,
         concluida: false
     }
